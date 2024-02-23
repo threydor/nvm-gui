@@ -2,13 +2,15 @@
 
 This is a NVM for Windows GUI application built with Electron and Angular. It is a simple application that allows you to manage your Node.js versions on Windows using the NVM for Windows tool.
 
+![NVM Gui](https://raw.githubusercontent.com/threydor/staticassets/main/images/nvm-gui-0-0-1.png)
+
 # Usage
 ## Installing
 First, you need to install NVM for Windows. You can find the installation instructions [here](https://github.com/coreybutler/nvm-windows).
 You can download the latest release of the NVM Gui from the [releases page](https://github.com/threydor/nvm-gui/releases).
 
 ## Running
-To run the application, simply run the `nvm-gui Setup.exe` file. The application will start and you will be able to manage your Node.js versions.
+To run the application, simply run the `nvm-gui Setup.exe` file. The application will start, and you will be able to manage your Node.js versions straight away :).
 
 
 
