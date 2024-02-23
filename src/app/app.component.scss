@@ -1,0 +1,109 @@
+:host {
+  height: 100%;
+  display: grid;
+  overflow: auto;
+  gap: 1rem;
+  grid-template-columns: auto 1fr;
+  font-size: 1.5rem;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.versions {
+  padding: 0.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: auto 1fr auto;
+
+  .version-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: .75rem;
+    padding-right: 1rem;
+    width: 100%;
+
+    .version {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .version-btns {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .text-bold {
+      font-weight: bold;
+    }
+  }
+}
+
+.custom-version {
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  .custom-version-title {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    line-height: 2rem;
+    justify-content: space-between;
+  }
+
+  .custom-version-input {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.output {
+  gap: 0.5rem;
+  padding: 0.5rem;
+  display: grid;
+  grid-auto-rows: auto 1fr;
+
+  .text-area {
+    padding: 1rem;
+    resize: none;
+    width: 100%;
+  }
+}
+
+$borderRadius: .4rem;
+$border: 1px solid #bbb;
+
+.btn {
+  border: $border;
+  border-radius: $borderRadius;
+  background-color: rgba(51, 51, 51, 0.05);
+  color: #333333;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 200ms;
+
+  &:disabled {
+    border-color: #ddd;
+    color: rgb(201, 201, 201);
+    cursor: not-allowed;
+    transition: none;
+  }
+
+  &:hover {
+    background-color: rgba(51, 51, 51, 0.1);
+  }
+}
+
+.input {
+  padding: 0.75rem;
+  border: $border;
+  border-radius: $borderRadius;
+}

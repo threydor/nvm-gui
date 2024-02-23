@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+body,
+html {
+  height: 100%;
+}
+
+html {
+  font-size: 10px;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    Segoe UI Symbol;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+}

@@ -1,0 +1,67 @@
+<div class="versions overflow-auto">
+    <div><small>Current version: <strong>{{currentNvmVersion() || '-'}}</strong></small></div>
+  <div class="version-list overflow-auto">
+    @for (nvmVersion of nvmVersionsList(); track nvmVersion) {
+      @if ({ isCurrent: nvmVersion === currentNvmVersion() }; as data) {
+        <div class="version">
+          <div>
+            {{ nvmVersion }} {{ data.isCurrent ? "*" : "" }}
+          </div>
+          <div class="version-btns">
+            <button
+              class="btn"
+              [disabled]="commandInProgress()"
+              (click)="changeNvmVersion(nvmVersion)"
+              type="button"
+            >
+              Use
+            </button>
+            <button
+              class="btn"
+              [disabled]="commandInProgress()"
+              (click)="uninstallNvmVersion(nvmVersion)"
+              type="button"
+            >
+              Uninstall
+            </button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+  <div class="custom-version">
+    <div class="custom-version-title">
+      <small>Custom version install:</small
+      ><a
+        href="https://nodejs.org/en/about/previous-releases"
+        (click)="
+          $event.preventDefault();
+          openLink('https://nodejs.org/en/about/previous-releases')
+        "
+        ><small>Node.js</small></a
+      >
+    </div>
+    <div class="custom-version-input">
+      <input
+        placeholder="Version"
+        class="input"
+        type="text"
+        [readonly]="commandInProgress()"
+        [(ngModel)]="nvmVersion"
+      />
+      <button
+        class="btn"
+        type="button"
+        [disabled]="commandInProgress()"
+        (click)="installNvmVersion(nvmVersion)"
+      >
+        Install
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="output">
+  <div><small>Output log:</small></div>
+  <textarea [readonly]="true" class="text-area" [value]="outputLog()"></textarea>
+</div>
